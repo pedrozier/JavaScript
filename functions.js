@@ -1,5 +1,5 @@
 
-// named function
+//named function
 function helloFunction(input) {
     const output = 'hello ' + input
     return output
@@ -16,6 +16,28 @@ const hello = (input) => output
 function myFunction(fun) {
     return fun()
 }
+
+//closures
+function outer() {
+
+    const constY = 'value'
+    let count = 0
+
+    function inner() {
+        count++
+        return `${count} ${constY}`
+    }
+
+    return inner
+}
+
+const fun = outer()
+
+console.log(fun())
+console.log(fun())
+console.log(fun())
+console.log(fun())
+console.log(fun())
 
 console.log(helloFunction('world'))
 console.log(myFunction(() => 'test'))
